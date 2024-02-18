@@ -55,7 +55,7 @@
 
 % Sections formatting
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
+  \vspace{-10pt}\scshape\raggedright\large
 }{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -71,17 +71,17 @@
 
 
 \newcommand{\resumeEducation}[5]{
-  \vspace{-2pt}\item
+  \vspace{-4pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textit{#2} \\
-      \textit{\small#3} & \textbf{\small #4} \\
+      \textit{\small#3} & {\small #4} \\
     \end{tabular*} \\
-    {\small \textbf{Courses:} #5}
-    % \vspace{-7pt}
+    {\small \underline{Courses:} #5}
+    \vspace{-2pt}
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
+  \vspace{-4pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & \textit{#2} \\
       \textit{\small#3} & {\small #4} \\
@@ -96,10 +96,10 @@
 }
 
 \newcommand{\resumeProjectHeading}[2]{
-    \item
+  \vspace{-4pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
+    \end{tabular*}\vspace{-8pt}
 }
 
 \newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
@@ -129,17 +129,17 @@
     \href{mailto:liaozping.yh@yahoo.com}{\underline{liaozping.yh@yahoo.com}} $|$ 
     % \href{https://linkedin.com/in/zhiping-liao-44449127b}{\underline{linkedin.com/in/zhiping-liao-44449127b}} $|$
     \href{https://github.com/ArArgon}{\underline{github.com/ArArgon}}
-    % $|$ {\textbf{CPT}}
+    $|$ {\textbf{Seeking Intern}}
 \end{center}
 
 
 %-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
-    \resumeSubheading
+    \resumeEducation
       {Carnegie Mellon University}{Aug. 2023 -- May 2025, Expected}
       {M.S. in Information Networking}{GPA: 3.91 / 4.00}
-      % {15-513 Introduction to Computer Systems, 15-641 Networking and the Internet}
+      {15-641 Networking and the Internet, 15-719 Advanced Cloud Computing}
     \resumeSubheading
       {University of Electronic Science and Technology of China}{Sept. 2019 - June 2023}
       {B.Eng. in Software Engineering}{GPA: 3.93 / 4.00}
@@ -178,19 +178,33 @@
 
 %-----------PROJECTS-----------
 \section{Projects}
-    \resumeSubHeadingListStart
-      \resumeProjectHeading {\textbf{J.H.C Compiler} $|$ \emph{15-411 Compiler Design Project}}{\textit{Jan. 2023 - Now}}
+    \resumeSubHeadingListStart  
+      % \resumeProjectHeading {\textbf{J.H.C Compiler} $|$ \emph{15-411 Compiler Design Project}}{\textit{Jan. 2024 - Now}}
+      %   \resumeItemListStart
+      %     \resumeItem{Actively developing a compiler in Rust for the C0 language.}
+      %     \resumeItem{Working on optimizing compiler phases, including SSA, register allocation and peephole optimization.}
+      %     \resumeItem{Rigorously testing the compiler, achieving over 3k+ successful test cases, and authoring comprehensive unit tests using Azure Pipelines.}
+      %     \resumeItem{{\bf Skills}: Rust, Linux, Azure Pipelines, LLDB, Docker, Assembly, Data Structures, Algorithms.}
+      %   \resumeItemListEnd
+      \resumeProjectHeading {\textbf{Scalable Image Classification Service}}{\textit{Jan. 2024 - Feb. 2024}}
           \resumeItemListStart
-            \resumeItem{Actively developing a compiler in Rust for the C0 language.}
-            \resumeItem{Working on optimizing compiler phases, including register allocation and peephole optimization.}
-            \resumeItem{Rigorously testing the compiler, achieving over 3k+ successful test cases, and authoring comprehensive unit tests to ensure reliability and robustness of the compiler functionalities.}
-            \resumeItem{{\bf Skills}: Rust, Linux, LLDB, Docker, Assembly, Data Structures, Algorithms.}
+            \resumeItem{Developed a scalable animal image classification service using Django, transitioning from EC2-based auto-scaling to a serverless Lambda architecture.}
+            \resumeItem{Employed Docker and Terraform for automation, facilitating seamless deployment across AWS services.}
+            \resumeItem{Advanced custom auto-scaling strategies using Amazon CloudWatch, Step Functions, and Lambda, increasing resource utilization and system responsiveness by 60\%.}
+            \resumeItem{{\bf Skills}: AWS (Lambda, EC2, CloudWatch), Docker, Terraform, Python, Django.}
           \resumeItemListEnd
-      \resumeProjectHeading {\textbf{CMU-HTTP} $|$ \emph{Networking and the Internet Course Project}}{\textit{Nov. 2023}}
+      % \resumeProjectHeading {\textbf{CMU-HTTP} $|$ \emph{Networking and the Internet Course Project}}{\textit{Nov. 2023}}
+      %     \resumeItemListStart
+      %       \resumeItem{Developed a single-threaded HTTP server in C, supporting concurrent clients, HTTP Keep-Alive and pipelining.}
+      %       \resumeItem{Validated robustness and load resilience by passing a rigorous siege test of 100 concurrent connections and meeting strict autograding criteria.}
+      %       \resumeItem{{\bf Skills}: C, Linux, HTTP, Wireshark, Python, GDB, Git.}
+      %     \resumeItemListEnd
+      \resumeProjectHeading{\textbf{High Performance Spark ETL Pipeline}}{\textit{Feb. 2024 - Now}}
           \resumeItemListStart
-            \resumeItem{Developed a single-threaded HTTP server in C, supporting concurrent clients, HTTP Keep-Alive and pipelining.}
-            \resumeItem{Validated robustness and load resilience by passing a rigorous siege test of 100 concurrent connections and meeting strict autograding criteria.}
-            \resumeItem{{\bf Skills}: C, Linux, HTTP, Wireshark, Python, GDB, Git.}
+            \resumeItem{Developed a PySpark ETL pipeline for processing 1 TB of data from Common Crawl Dataset, transforming and loading it into HDFS.}
+            \resumeItem{Managed Spark clusters and HDFS on EC2 spot instances, ensuring scalability across varying dataset sizes.}
+            \resumeItem{Optimized the pipeline, achieving a 50\% reduction in processing time by leveraging Spark RDD and partitioning.}
+            \resumeItem{{\bf Skills}: Apache Spark, Amazon S3, HDFS, Hadoop, Python.}
           \resumeItemListEnd
       \resumeProjectHeading
           {\textbf{CMU-TCP} $|$ \emph{Networking and the Internet Course Project}}{\textit{Oct. 2023 -- Nov. 2023}}
